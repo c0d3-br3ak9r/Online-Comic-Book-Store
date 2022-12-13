@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Our Comics</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body class="container-fluid">
+        <div id="header">
+            <h style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 3em;">Our Comics</h>
+            <input type="text" placeholder="Search here...">
+        </div>
+        <div id="main">
+            <div id="content">
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="mb-3">Top Rated Comics </h3>
+                    </div>
+                    <div class="col-6 text-right">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topRated[0].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topRated[0].id}}" class="bk-title" th:text="${topRated[0].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topRated[0].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[0].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[0].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[0].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[0].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topRated[0].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topRated[0].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topRated[1].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topRated[1].id}}" class="bk-title" th:text="${topRated[1].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topRated[1].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[1].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[1].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[1].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[1].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topRated[1].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topRated[1].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topRated[2].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topRated[2].id}}" class="bk-title" th:text="${topRated[2].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topRated[2].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[2].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[2].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[2].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[2].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topRated[2].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topRated[2].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+            
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topRated[3].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topRated[3].id}}" class="bk-title" th:text="${topRated[3].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topRated[3].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[3].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[3].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[3].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[3].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topRated[3].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topRated[3].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topRated[4].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topRated[4].id}}" class="bk-title" th:text="${topRated[4].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topRated[4].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[4].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[4].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[4].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[4].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topRated[4].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topRated[4].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card bg-dark">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topRated[5].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topRated[5].id}}" class="bk-title" th:text="${topRated[5].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topRated[5].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[5].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[5].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[5].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topRated[5].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topRated[5].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topRated[5].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="mb-3">Top Downloaded Comics </h3>
+                    </div>
+                    <div class="col-6 text-right">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topDownloaded[0].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topDownloaded[0].id}}" class="bk-title" th:text="${topDownloaded[0].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topDownloaded[0].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[0].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[0].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[0].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[0].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topDownloaded[0].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topDownloaded[0].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topDownloaded[1].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topDownloaded[1].id}}" class="bk-title" th:text="${topDownloaded[1].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topDownloaded[1].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[1].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[1].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[1].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[1].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topDownloaded[1].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topDownloaded[1].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topDownloaded[2].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topDownloaded[2].id}}" class="bk-title" th:text="${topDownloaded[2].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topDownloaded[2].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[2].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[2].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[2].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[2].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topDownloaded[2].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topDownloaded[2].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+            
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topDownloaded[3].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topDownloaded[3].id}}" class="bk-title" th:text="${topDownloaded[3].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topDownloaded[3].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[3].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[3].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[3].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[3].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topDownloaded[3].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topDownloaded[3].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topDownloaded[4].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topDownloaded[4].id}}" class="bk-title" th:text="${topDownloaded[4].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topDownloaded[4].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[4].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[4].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[4].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[4].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topDownloaded[4].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topDownloaded[4].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card bg-dark">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${topDownloaded[5].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${topDownloaded[5].id}}" class="bk-title" th:text="${topDownloaded[5].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${topDownloaded[5].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[5].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[5].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[5].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${topDownloaded[5].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${topDownloaded[5].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${topDownloaded[5].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="mb-3">Recommended For You</h3>
+                    </div>
+                    <div class="col-6 text-right">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${rec[0].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${rec[0].id}}" class="bk-title" th:text="${rec[0].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${rec[0].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[0].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[0].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[0].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[0].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${rec[0].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${rec[0].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${rec[1].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${rec[1].id}}" class="bk-title" th:text="${rec[1].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${rec[1].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[1].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[1].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[1].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[1].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${rec[1].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${rec[1].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${rec[2].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${rec[2].id}}" class="bk-title" th:text="${rec[2].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${rec[2].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[2].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[2].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[2].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[2].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${rec[2].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${rec[2].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+            
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${rec[3].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${rec[3].id}}" class="bk-title" th:text="${rec[3].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${rec[3].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[3].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[3].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[3].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[3].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${rec[3].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${rec[3].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${rec[4].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${rec[4].id}}" class="bk-title" th:text="${rec[4].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${rec[4].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[4].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[4].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[4].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[4].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${rec[4].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${rec[4].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card bg-dark">
+                                                <img class="img-fluid" alt="100%x280" th:src="@{${rec[5].url}}">
+                                                <div class="card-body bg-dark">
+                                                    <a th:href="@{'/book?id='+${rec[5].id}}" class="bk-title" th:text="${rec[5].title}" >Wonder Woman</a>
+                                                    <div class="rating" th:if="${rec[5].rating == 1}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[5].rating == 2}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[5].rating == 3}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[5].rating == 4}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="rating" th:if="${rec[5].rating == 5}">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="rd"><i class="fa fa-download" th:text="    ${rec[5].downloads}    "></i>  &nbsp;
+                                                        <i class="fa fa-book" th:text="    ${rec[5].reads}    "></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <p>&copy; 2021 All Rights Reserved</p>
+        </div>
+    </body>
+</html>
